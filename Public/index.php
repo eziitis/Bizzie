@@ -1,3 +1,6 @@
+<?php
+  require_once '../app/require.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
