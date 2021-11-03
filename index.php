@@ -9,6 +9,5 @@
 <body>
   <ul>
   </ul>
-  
 </body>
 </html>
