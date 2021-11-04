@@ -3,7 +3,15 @@
 class Base {
 
   public function __construct() {
-    echo 'Base working all fine';
+
+  }
+
+  public function index() {
+    echo 'index working';
+  }
+
+  public function about() {
+    echo 'about';
   }
   
 }
