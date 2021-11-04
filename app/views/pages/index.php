@@ -1,6 +1,3 @@
-<?php
-  require_once '../app/require.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <h1>MVC working fine</h1>
 </body>
 </html>
