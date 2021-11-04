@@ -7,8 +7,16 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>
-    New addin site
-  </h1>
+
+  <form action="" method="POST">
+    <div>   
+      <div>Product Add</div>
+      <button>Save</button>
+      <button>Cancel</button>
+    </div>
+
+  </form>
+
+
 </body>
 </html>
