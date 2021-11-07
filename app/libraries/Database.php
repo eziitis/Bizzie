@@ -1,6 +1,7 @@
 <?php
 
   class Database {
+    
     private $dbHost = DB_HOST;
     private $dbUser = DB_USER;
     private $dbPass = DB_PASS;
@@ -12,6 +13,7 @@
 
     public function __construct() {
       $conn = 'mysql:host='.$this->dbHost.';dbname='.$this->dbName;
+      
       $options = array(
         PDO::ATTR_PERSISTENT => true,
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -22,11 +24,12 @@
         $this->error = $e->getMessage();
         echo $this->error;
       }
+      
     }
 
     //Allows to write queries
     public function query($sql) {
-      $this->statment = $this->dbHandler->prepare($sql);
+      $this->statement = $this->dbHandler->prepare($sql);
     }
 
     public function bind($parameter,$value, $type = null) {
@@ -44,6 +47,7 @@
           $type = PDO::PARAM_STR;     
       }
       $this->statement->bindValue($parameter,$value,$type);
+      var_dump( $this->statment);
     }
     //Execute prepared statement
     public function execute() {

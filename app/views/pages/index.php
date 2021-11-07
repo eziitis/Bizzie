@@ -11,7 +11,12 @@
   <br>
   <br>
   <?php
-  echo SITENAME;
+    echo SITENAME;
+  ?>
+  <br>
+  <br>
+  <?php
+    var_dump($data);
   ?>
 </body>
 </html>

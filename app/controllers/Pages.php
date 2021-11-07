@@ -2,12 +2,18 @@
 
 class Pages extends Controller {
   public function __construct() {
-    $this->elemModel = $this->model('ELEMENT');
+    $this->elementModel = $this->model('ELEMENT');
 
   }
 
   public function index() {
-    $this->view('pages/index');
+
+    $elements = $this->elementModel->getElements();
+    $data = [
+      'title' => 'Home Page',
+      'elements' => $elements
+    ];
+    $this->view('pages/index',$data);
   }
 
   public function add() {
