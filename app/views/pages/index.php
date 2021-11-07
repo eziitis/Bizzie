@@ -8,5 +8,10 @@
 </head>
 <body>
   <h1>MVC working fine</h1>
+  <br>
+  <br>
+  <?php
+  echo SITENAME;
+  ?>
 </body>
 </html>

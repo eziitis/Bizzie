@@ -2,6 +2,7 @@
 
 class Pages extends Controller {
   public function __construct() {
+    $this->elemModel = $this->model('ELEMENT');
 
   }
 
