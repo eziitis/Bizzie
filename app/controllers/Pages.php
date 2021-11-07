@@ -9,10 +9,7 @@ class Pages extends Controller {
   public function index() {
 
     $elements = $this->elementModel->getElements();
-    $data = [
-      'title' => 'Home Page',
-      'elements' => $elements
-    ];
+    $data = $elements;
     $this->view('pages/index',$data);
   }
 

@@ -57,7 +57,7 @@
     //Return an array
     public function resultSet() {
       $this->execute();
-      return $this->statement->fetchAll(PDO::FETCH_OBJ);
+      return $this->statement->fetchAll(PDO::FETCH_ASSOC);
     }
     //Get's the row count
     public function rowCount() {

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +9,12 @@
   <title>Document</title>
 </head>
 <body>
-  <br>
-  <?php
-    echo APPROOT;
-  ?>
+<form action="" method="POST">
+    <div>   
+      <div>Product Add</div>
+      <button>Save</button>
+      <button>Cancel</button>
+    </div>
+  </form>
 </body>
 </html>

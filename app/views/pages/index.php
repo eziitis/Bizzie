@@ -7,16 +7,42 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>MVC working fine</h1>
-  <br>
-  <br>
-  <?php
-    echo SITENAME;
-  ?>
-  <br>
-  <br>
-  <?php
-    var_dump($data);
-  ?>
+  <form action="">
+    <div>
+      <div>Product List</div>
+      <button id="add-product-btn">ADD</button>
+      <button id="delete-product-btn">MASS DELETE</button>
+    </div>
+    <hr>
+    <?php
+      foreach($data as $d) {
+    ?>
+      <div>  
+        <input class="delete-checkbox" type="checkbox">
+        <div><?php echo$d['sku']?></div>
+        <div><?php echo$d['name']?></div>
+        <div><?php echo$d['price']?> $</div>
+        <?php
+          if ($d['productType'] === 'DVD') {
+        ?>
+          <div>Size: <?php echo$d['size']?> MB</div>
+        <?php
+          } else if ($d['productType'] === 'BOOK') {
+        ?>
+          <div>Weight: <?php echo$d['weight']?>KG</div>
+        <?php    
+          } else if ($d['productType'] === 'Furniture') {
+        ?>
+          <div>Dimension: <?php echo$d['height']?>x<?php echo$d['width']?>x<?php echo$d['length']?></div>
+        <?php    
+          }
+        ?>
+      </div>  
+    <?php    
+      }
+    ?>
+    <hr>
+    <div>Scandiweb Test assignment</div>
+  </form>
 </body>
 </html>
