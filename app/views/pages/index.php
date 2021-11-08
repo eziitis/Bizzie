@@ -1,3 +1,6 @@
+<?php
+  require_once '../app/require.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +10,18 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="">
+  <form action="/bizzie/pages/deleteOrADD" method="POST">
     <div>
       <div>Product List</div>
-      <button id="add-product-btn">ADD</button>
-      <button id="delete-product-btn">MASS DELETE</button>
+      <a href="#">ADD</a>
+      <button type="submit" id="delete-product-btn">MASS DELETE</button>
     </div>
     <hr>
     <?php
       foreach($data as $d) {
     ?>
       <div>  
-        <input class="delete-checkbox" type="checkbox">
+        <input name="checkbox[]" class="delete-checkbox" type="checkbox" value="<?php echo $d['id'];?>">
         <div><?php echo$d['sku']?></div>
         <div><?php echo$d['name']?></div>
         <div><?php echo$d['price']?> $</div>

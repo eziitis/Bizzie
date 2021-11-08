@@ -7,7 +7,6 @@ class Pages extends Controller {
   }
 
   public function index() {
-
     $elements = $this->elementModel->getElements();
     $data = $elements;
     $this->view('pages/index',$data);
@@ -19,6 +18,16 @@ class Pages extends Controller {
       'name' => 'Harry Strickland'
     ];
     $this->view('pages/add',$data);
+  }
+
+  public function deleteOrADD() {
+
+    foreach ($_POST['checkbox'] as $el) {
+      $this->elementModel->deleteElements($el);
+    }
+    $elements = $this->elementModel->getElements();
+    $data = $elements;
+    $this->view('pages/index',$data);
   }
   
 }
