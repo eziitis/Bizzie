@@ -1,26 +1,18 @@
 <?php
-  require_once '../app/require.php';
+  require APPROOT.'/views/includes/head.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <form action="/bizzie/pages/deleteOrADD" method="POST">
+
+  <form action="/bizzie/pages/doa" method="POST">
     <div>
       <div>Product List</div>
-      <a href="#">ADD</a>
+      <a href="pages/add">ADD</a>
       <button type="submit" id="delete-product-btn">MASS DELETE</button>
     </div>
     <hr>
     <?php
       foreach($data as $d) {
     ?>
-      <div>  
+      <div class="items">  
         <input name="checkbox[]" class="delete-checkbox" type="checkbox" value="<?php echo $d['id'];?>">
         <div><?php echo$d['sku']?></div>
         <div><?php echo$d['name']?></div>
@@ -44,8 +36,7 @@
     <?php    
       }
     ?>
-    <hr>
-    <div>Scandiweb Test assignment</div>
-  </form>
-</body>
-</html>
+
+<?php
+  require APPROOT.'/views/includes/foot.php';
+?>

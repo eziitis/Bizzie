@@ -1,3 +1,11 @@
 //setup test
 @import './resets';
 @import './variables';
+
+#hidden2,#hidden3 {
+  display:none;
+}
+.hidden {
+  display: none;
+}
+
