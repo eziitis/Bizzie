@@ -43,19 +43,22 @@ class Pages extends Controller {
       'length' => null
     ];
     switch ($data['productType']) {
-      case 'dvd':
+      case 'DVD':
         $data['size']= $_POST['size'];
         break;
-      case 'book':
+      case 'BOOK':
         $data['weight']= $_POST['weight'];  
         break;
-      case 'furniture':
+      case 'Furniture':
         $data['height']= $_POST['height'];
         $data['width']= $_POST['width'];
         $data['length']= $_POST['length'];
         break;  
     }
-    $this->view('pages/testPage',$data);
+    $this->elementModel->addElements($data);
+    $elements = $this->elementModel->getElements();
+    $dataIndex = $elements;
+    $this->view('index',$dataIndex);
   }
   
 }

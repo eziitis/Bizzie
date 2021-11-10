@@ -20,9 +20,9 @@
 
     <label for="productType">Type Switcher</label>
     <select id="productType" name="productType" onchange="showDiv(this)">
-      <option value="dvd">DVD</option>
-      <option value="book" onClick"showhidden2()">BOOK</option>
-      <option value="furniture">Furniture</option>
+      <option value="DVD">DVD</option>
+      <option value="BOOK" onClick"showhidden2()">BOOK</option>
+      <option value="Furniture">Furniture</option>
 	  </select>
 
     <div id="hidden1">
@@ -44,9 +44,9 @@
 
     <script>
       function showDiv(element) {
-        document.getElementById('hidden1').style.display = element.value == 'dvd' ? 'block' : 'none';
-        document.getElementById('hidden2').style.display = element.value == 'book' ? 'block' : 'none';
-        document.getElementById('hidden3').style.display = element.value == 'furniture' ? 'block' : 'none';
+        document.getElementById('hidden1').style.display = element.value == 'DVD' ? 'block' : 'none';
+        document.getElementById('hidden2').style.display = element.value == 'BOOK' ? 'block' : 'none';
+        document.getElementById('hidden3').style.display = element.value == 'Furniture' ? 'block' : 'none';
       }  
     </script>
 
