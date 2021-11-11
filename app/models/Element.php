@@ -61,4 +61,11 @@ class Element {
     return ($this->db->rowCount() > 0) ? true : false;
   }
 
+  public function lastElement() {
+    $num = '1026';
+    $this->db->query('SELECT * FROM elements WHERE id='.$num.';');
+    $result = $this->db->oneResult();
+    return $result;
+  }
+
 }

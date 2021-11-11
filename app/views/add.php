@@ -9,6 +9,7 @@
       <button name="cancel" id="add-product-btn">Cancel</button>
     </div>
     <hr>
+    <div>Form #<?php echo ($data['lastID']['id'])+1; ?></div>
     <label for="sku">SKU</label>
     <input id="sku" name="sku" type="text">
     <div class="invalidFeedback">
@@ -40,6 +41,8 @@
       <div class="invalidFeedback">
         <?php echo $data['sizeError']; ?>
       </div>
+      <div>Please enter DVD's size in MB.</div>
+      <div>As a whole number(without comma).</div>
     </div>
     <div id="hidden2">
       <label for="weight">Weight (KG)</label>
@@ -47,6 +50,8 @@
       <div class="invalidFeedback">
         <?php echo $data['weightError']; ?>
       </div>
+      <div>Please enter book's weight in kg.</div>
+      <div>As a whole number(without comma).</div>
     </div>
     <div id="hidden3">
       <label for="height">Height (CM)</label>
@@ -64,6 +69,8 @@
       <div class="invalidFeedback">
         <?php echo $data['lengthError']; ?>
       </div>
+      <div>Please enter furniture's dimensions in cm.</div>
+      <div>As a whole numbers(without commas).</div>
     </div>
 
     

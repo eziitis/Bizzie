@@ -50,6 +50,10 @@ class Pages extends Controller {
         $this->view('index',$data,$errorData);
       }
     } else if (isset($_POST['add'])) {
+      $lastID = $this->elementModel->lastElement();
+      if (empty($lastID)) {
+        $lastID = '1001';
+      }
       $data=[
         'sku' => '',
         'name' => '',
@@ -67,7 +71,8 @@ class Pages extends Controller {
         'weightError'=>'',
         'heightError'=>'',
         'widthError'=>'',
-        'lengthError'=>''
+        'lengthError'=>'',
+        'lastID' => $lastID
       ];
       $this->view('add',$data);
     } else {
@@ -83,6 +88,10 @@ class Pages extends Controller {
       $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
       //trim removes all whitespace(both sides)
+      $lastID = $this->elementModel->lastElement();
+      if (empty($lastID)) {
+        $lastID = '1001';
+      }
       $data = [
         'sku' => trim($_POST['sku']),
         'name' => trim($_POST['name']),
@@ -100,7 +109,8 @@ class Pages extends Controller {
         'weightError'=>'',
         'heightError'=>'',
         'widthError'=>'',
-        'lengthError'=>''
+        'lengthError'=>'',
+        'lastID' => $lastID
       ];
 
       $skuValidation = "/^[a-zA-Z0-9]*$/";
@@ -145,6 +155,8 @@ class Pages extends Controller {
         $this->elementModel->addElements($data);
         $this->index();
       } else {
+        $lastEl = $this->elementModel->lastElement();
+
         $this->view('add',$data);
       }
 
