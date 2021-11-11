@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo SITENAME;?></title>
   <link rel="stylesheet" href="../css/main.css">
+  <script defer src="../scripts/script.js"></script>
 </head>
 <body>
   

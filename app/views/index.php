@@ -5,8 +5,8 @@
   <form action="/bizzie/pages/doa" method="POST">
     <div>
       <div>Product List</div>
-      <a href="pages/add">ADD</a>
-      <button type="submit" id="delete-product-btn">MASS DELETE</button>
+      <button name="add" type="submit" id="add-product-btn">ADD</button>
+      <button name="delete" type="submit" id="delete-product-btn">MASS DELETE</button>
     </div>
     <hr>
     <?php

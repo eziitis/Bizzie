@@ -5,8 +5,8 @@
 <form id="product_form" action="/bizzie/pages/addItems" method="POST">
     <div class="header">   
       <div>Product Add</div>
-      <button>Save</button>
-      <a href="../index">Cancel</a>
+      <button name="save" id="save-product-btn">Save</button>
+      <button name="cancel" id="add-product-btn">Cancel</button>
     </div>
     <hr>
     <label for="sku">SKU</label>
@@ -42,13 +42,7 @@
       <input type="text" id="length" name="length">
     </div>
 
-    <script>
-      function showDiv(element) {
-        document.getElementById('hidden1').style.display = element.value == 'DVD' ? 'block' : 'none';
-        document.getElementById('hidden2').style.display = element.value == 'BOOK' ? 'block' : 'none';
-        document.getElementById('hidden3').style.display = element.value == 'Furniture' ? 'block' : 'none';
-      }  
-    </script>
+    
 
   </form>
 
