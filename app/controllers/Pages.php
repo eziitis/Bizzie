@@ -9,7 +9,10 @@ class Pages extends Controller {
   public function index() {
     $elements = $this->elementModel->getElements();
     $data = $elements;
-    $this->view('index',$data);
+    $errorData = [
+      'deleteError' => ''
+    ];
+    $this->view('index',$data, $errorData);
   }
 
   public function add() {
@@ -28,12 +31,24 @@ class Pages extends Controller {
   public function doa() {
 
     if (isset($_POST['delete'])) {
-      foreach ($_POST['checkbox'] as $el) {
-        $this->elementModel->deleteElements($el);
+      if (empty($_POST['checkbox'])) {
+        $elements = $this->elementModel->getElements();
+        $data = $elements;
+        $errorData = [
+          'deleteError' => 'Please select elements for deletion.'
+        ];
+        $this->view('index',$data,$errorData);
+      } else {
+        foreach ($_POST['checkbox'] as $el) {
+          $this->elementModel->deleteElements($el);
+        }
+        $elements = $this->elementModel->getElements();
+        $data = $elements;
+        $errorData = [
+          'deleteError' => ''
+        ];
+        $this->view('index',$data,$errorData);
       }
-      $elements = $this->elementModel->getElements();
-      $data = $elements;
-      $this->view('index',$data);
     } else if (isset($_POST['add'])) {
       $data=[
         'sku' => '',

@@ -7,6 +7,9 @@
       <div>Product List</div>
       <button name="add" type="submit" id="add-product-btn">ADD</button>
       <button name="delete" type="submit" id="delete-product-btn">MASS DELETE</button>
+      <div class="noneSelected">
+        <?php echo $errorData['deleteError']; ?>
+      </div>
     </div>
     <hr>
     <?php
