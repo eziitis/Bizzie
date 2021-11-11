@@ -53,4 +53,12 @@ class Element {
     $this->db->execute();
   }
 
+  public function skuCheck($sku) { 
+
+    $this->db->query('SELECT * FROM elements WHERE sku= :sku');
+    $this->db->bind(':sku', $sku);
+
+    return ($this->db->rowCount() > 0) ? true : false;
+  }
+
 }

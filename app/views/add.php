@@ -11,12 +11,21 @@
     <hr>
     <label for="sku">SKU</label>
     <input id="sku" name="sku" type="text">
+    <div class="invalidFeedback">
+      <?php echo $data['skuError']; ?>
+    </div>
 
     <label for="name">Name</label>
     <input id="name" name="name" type="text">
+    <div class="invalidFeedback">
+      <?php echo $data['nameError']; ?>
+    </div>
 
     <label for="price">Price</label>
     <input id="price" name="price" type="text">
+    <div class="invalidFeedback">
+      <?php echo $data['priceError']; ?>
+    </div>
 
     <label for="productType">Type Switcher</label>
     <select id="productType" name="productType" onchange="showDiv(this)">
@@ -28,18 +37,33 @@
     <div id="hidden1">
       <label for="size">Size (MB)</label>
       <input type="text" id="size" name="size">
+      <div class="invalidFeedback">
+        <?php echo $data['sizeError']; ?>
+      </div>
     </div>
     <div id="hidden2">
       <label for="weight">Weight (KG)</label>
       <input type="text" id="weight" name="weight">
+      <div class="invalidFeedback">
+        <?php echo $data['weightError']; ?>
+      </div>
     </div>
     <div id="hidden3">
       <label for="height">Height (CM)</label>
       <input type="text" id="height" name="height">
+      <div class="invalidFeedback">
+        <?php echo $data['heightError']; ?>
+      </div>
       <label for="width">Width (CM)</label>
       <input type="text" id="width" name="width">
+      <div class="invalidFeedback">
+        <?php echo $data['widthError']; ?>
+      </div>
       <label for="length">Length (CM)</label>
       <input type="text" id="length" name="length">
+      <div class="invalidFeedback">
+        <?php echo $data['lengthError']; ?>
+      </div>
     </div>
 
     
